@@ -15,6 +15,15 @@ var questionAnswerArray=[{
   answer:'2years'
 }];
 
+var highScore =[{
+  name: 'Om',
+  score:3
+  },
+  {
+    name:'Bindu',
+    score:2
+}];
+
 function welcome(){
   var userName = readlineSync.question("What's your name? ")
   console.log(`Welcome ${userName} to 'Do you know Prachi?'`);
@@ -43,6 +52,14 @@ function showScore(){
   console.log(`Yayyyyy! You scored: ${score}`);
 }
 
+function showAllParticipantsScores(){
+  console.log("Check out the high scores, if you should be there ping me and I'll update it");
+  for(var i of highScore){
+    console.log(`${i.name}: ${i.score}`)
+  }
+}
+
 welcome();
 game();
 showScore();
+showAllParticipantsScores();
