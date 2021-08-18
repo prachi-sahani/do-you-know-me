@@ -1,6 +1,7 @@
 //make a game
 var readlineSync = require('readline-sync');
 
+var score = 0;
 var questionAnswerArray=[{
     question:'Where do I live? ',
     answer:'India'
@@ -23,10 +24,13 @@ function play(question, answer){
     var userAnswer = readlineSync.question(question);
     if(userAnswer === answer){
         console.log('Right!');
+        score++;
     }
     else{
         console.log('Wrong!')
     }
+    console.log(`Current Score: ${score}`);
+    console.log('-------------------------');
 }
 
 function game(){
@@ -35,5 +39,10 @@ function game(){
   }
 }
 
+function showScore(){
+  console.log(`Yayyyyy! You scored: ${score}`);
+}
+
 welcome();
 game();
+showScore();
